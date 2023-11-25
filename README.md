@@ -58,7 +58,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AppController {
 
     @GetMapping("/hola")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+    public String hola(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
 		return "hola";
 	}
@@ -103,4 +103,12 @@ http://localhost:8080/hola
 
 ```
 http://localhost:8080/hola?name=Pepe
+```
+
+## Fichero de configuración: application.properties
+
+Cambiar el puerto: server.port=80
+
+```
+http://localhost/hola?name=Pepe
 ```
